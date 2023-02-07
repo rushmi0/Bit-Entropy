@@ -139,7 +139,7 @@ def main():
             for i in range(3):
                 keys = input('Enter public key %s\n > ' % (i+1))
 
-                if check_public_key(keys) == True and is_base16(keys):
+                if check_public_key(keys) == True and is_base16(keys) == True:
                     print("Valid Public Key [%s]" % keys)
                     keys_stored.append(keys)
                 else:
@@ -160,7 +160,7 @@ def main():
             for i in range(3):
                 keys = input('Enter public key %s\n > ' % (i+1))
 
-                if check_public_key(keys) == True and is_base16(keys):
+                if check_public_key(keys) == True and is_base16(keys) == True:
                     print("Valid Public Key [%s]" % keys)
                     keys_stored.append(keys)
                 else:
@@ -181,7 +181,7 @@ def main():
             for i in range(3):
                 keys = input('Enter public key %s\n > ' % (i+1))
 
-                if check_public_key(keys) == True and is_base16(keys):
+                if check_public_key(keys) == True and is_base16(keys) == True:
                     print("Valid Public Key [%s]" % keys)
                     keys_stored.append(keys)
                 else:
@@ -202,7 +202,7 @@ def main():
             for i in range(2):
                 keys = input('Enter public key %s\n > ' % (i+1))
 
-                if check_public_key(keys) == True and is_base16(keys):
+                if check_public_key(keys) == True and is_base16(keys) == True:
                     print("Valid Public Key [%s]" % keys)
                     keys_stored.append(keys)
                 else:
@@ -223,7 +223,7 @@ def main():
             for i in range(2):
                 keys = input('Enter public key %s\n > ' % (i+1))
 
-                if check_public_key(keys) == True and is_base16(keys):
+                if check_public_key(keys) == True and is_base16(keys) == True:
                     print("Valid Public Key [%s]" % keys)
                     keys_stored.append(keys)
                 else:
@@ -244,7 +244,7 @@ def main():
             for i in range(1):
                 keys = input('Enter public key %s\n > ' % (i+1))
 
-                if check_public_key(keys) == True and is_base16(keys):
+                if check_public_key(keys) == True and is_base16(keys) == True:
                     print("Valid Public Key [%s]" % keys)
                     keys_stored.append(keys)
                 else:
