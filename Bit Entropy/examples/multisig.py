@@ -123,7 +123,7 @@ def multisig_1of1(pubkey=[]) -> bytes :
 
 
 def main():
-    for i in range(3):
+    for i in range(6):
         keys_stored = []
         print()
         option = int(input('[ Option Create a MultiSig ]\n'
@@ -138,13 +138,14 @@ def main():
             print('\n[Function MultiSig 3 of 3]')
             for i in range(3):
                 keys = input('Enter public key %s\n > ' % (i+1))
-                print()
 
-                if check_public_key(keys) == True:
-                    print("Valid public key format %s" % keys)
+                if check_public_key(keys) == True and is_base16(keys):
+                    print("Valid Public Key [%s]" % keys)
                     keys_stored.append(keys)
                 else:
-                    print("Invalid public key format!!")
+                    print("Invalid Public Key!!")
+                    break
+                print()
             Raw_Redeem_Script = multisig_3of3(keys_stored)
             Redeem_Script = Raw_Redeem_Script.hex()
 
@@ -158,14 +159,14 @@ def main():
             print('\n[Function MultiSig 2 of 3]')
             for i in range(3):
                 keys = input('Enter public key %s\n > ' % (i+1))
-                print()
 
-                if check_public_key(keys) == True:
-                    print("Valid public key format %s" % keys)
+                if check_public_key(keys) == True and is_base16(keys):
+                    print("Valid Public Key [%s]" % keys)
                     keys_stored.append(keys)
                 else:
-                    print("Invalid public key format!!")
-
+                    print("Invalid Public Key!!")
+                    break
+                print()
             print('set key: ', keys_stored)
             Raw_Redeem_Script = multisig_2of3(keys_stored)
             Redeem_Script = Raw_Redeem_Script.hex()
@@ -179,13 +180,14 @@ def main():
             print('\n[Function MultiSig 1 of 3]')
             for i in range(3):
                 keys = input('Enter public key %s\n > ' % (i+1))
-                print()
 
-                if check_public_key(keys) == True:
-                    print("Valid public key format %s" % keys)
+                if check_public_key(keys) == True and is_base16(keys):
+                    print("Valid Public Key [%s]" % keys)
                     keys_stored.append(keys)
                 else:
-                    print("Invalid public key format!!")
+                    print("Invalid Public Key!!")
+                    break
+                print()
             Raw_Redeem_Script = multisig_1of3(keys_stored)
             Redeem_Script = Raw_Redeem_Script.hex()
 
@@ -197,15 +199,16 @@ def main():
 
         elif option == 4:
             print('\n[Function MultiSig 2 of 2]')
-            for i in range(3):
+            for i in range(2):
                 keys = input('Enter public key %s\n > ' % (i+1))
-                print()
 
-                if check_public_key(keys) == True:
-                    print("Valid public key format %s" % keys)
+                if check_public_key(keys) == True and is_base16(keys):
+                    print("Valid Public Key [%s]" % keys)
                     keys_stored.append(keys)
                 else:
-                    print("Invalid public key format!!")
+                    print("Invalid Public Key!!")
+                    break
+                print()
             Raw_Redeem_Script = multisig_2of2(keys_stored)
             Redeem_Script = Raw_Redeem_Script.hex()
 
@@ -217,15 +220,16 @@ def main():
 
         elif option == 5:
             print('\n[Function MultiSig 1 of 2]')
-            for i in range(3):
+            for i in range(2):
                 keys = input('Enter public key %s\n > ' % (i+1))
-                print()
 
-                if check_public_key(keys) == True:
-                    print("Valid public key format %s" % keys)
+                if check_public_key(keys) == True and is_base16(keys):
+                    print("Valid Public Key [%s]" % keys)
                     keys_stored.append(keys)
                 else:
-                    print("Invalid public key format!!")
+                    print("Invalid Public Key!!")
+                    break
+                print()
             Raw_Redeem_Script = multisig_1of2(keys_stored)
             Redeem_Script = Raw_Redeem_Script.hex()
 
@@ -237,15 +241,16 @@ def main():
 
         elif option == 6:
             print('\n[Function MultiSig 1 of 1]')
-            for i in range(3):
+            for i in range(1):
                 keys = input('Enter public key %s\n > ' % (i+1))
-                print()
 
-                if check_public_key(keys) == True:
-                    print("Valid public key format %s" % keys)
+                if check_public_key(keys) == True and is_base16(keys):
+                    print("Valid Public Key [%s]" % keys)
                     keys_stored.append(keys)
                 else:
-                    print("Invalid public key format!!")
+                    print("Invalid Public Key!!")
+                    break
+                print()
             Raw_Redeem_Script = multisig_1of1(keys_stored)
             Redeem_Script = Raw_Redeem_Script.hex()
 
