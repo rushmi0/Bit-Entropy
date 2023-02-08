@@ -87,3 +87,67 @@ def multisig_1of3(pubkey=[]) -> str:
     return script
 
 
+#if __name__ == "__main__":
+for i in range(3):
+    keys_stored = []
+    print()
+    n_sig = int(input("Enter the Signatures required for unlock: "))
+
+    key = int(input('Enter the keys to create MultiSig: '))
+
+    if n_sig == 1 and key == 3:
+        for i in range(3):
+            print()
+            keys = input('Enter your public key: ')
+
+            if check_public_key(keys) == True and check_format(keys[2:]) == True:
+                print("Valid public key format %s" % keys)
+                keys_stored.append(keys)
+            else:
+                print("Invalid public key format!!")
+        Raw_Redeem_Script = multisig_1of3(keys_stored)
+        Redeem_Script = Raw_Redeem_Script.hex()
+
+        Locking_Script = locking_script(Raw_Redeem_Script)
+        print('\n'
+              'Redeem Script: %s' % Redeem_Script)
+        print('Locking Script %s ' % Locking_Script)
+
+    elif n_sig == 2 and key == 3:
+        for i in range(3):
+            print()
+            keys = input('Enter your public key: ')
+
+            if check_public_key(keys) == True and check_format(keys[2:]) == True:
+                print("Valid public key format %s" % keys)
+                keys_stored.append(keys)
+            else:
+                print("Invalid public key format!!")
+        Raw_Redeem_Script = multisig_2of3(keys_stored)
+        Redeem_Script = Raw_Redeem_Script.hex()
+
+        Locking_Script = locking_script(Raw_Redeem_Script)
+        print('\n'
+              'Redeem Script: %s' % Redeem_Script)
+        print('Locking Script %s ' % Locking_Script)
+
+    elif n_sig == 3 and key == 3:
+        for i in range(3):
+            print()
+            keys = input('Enter your public key: ')
+
+            if check_public_key(keys) == True and check_format(keys[2:]) == True:
+                print("Valid public key format %s" % keys)
+                keys_stored.append(keys)
+            else:
+                print("Invalid public key format!!")
+        Raw_Redeem_Script = multisig_3of3(keys_stored)
+        Redeem_Script = Raw_Redeem_Script.hex()
+
+        Locking_Script = locking_script(Raw_Redeem_Script)
+        print('\n'
+              'Redeem Script: %s' % Redeem_Script)
+        print('Locking Script %s ' % Locking_Script)
+
+    else:
+        print('Not in option!!')
