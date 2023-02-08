@@ -373,7 +373,7 @@ def select_key(num):
 
         close_menu()
         #generated.bind('<Control-c>', lambda _: 'break')
-
+confirm = Label(root, image=conSeedImage, border=0, bg=mainbg)
 
 def confirm_seed():
     generated.place_forget()
@@ -800,6 +800,8 @@ def close_home():
     prikeybox.place_forget()
     prikeybox2.place_forget()
     prikeybox3.place_forget()
+    non_prikeybox.place_forget()
+    non_pubkeybox.place_forget()
 
     p2pkhTextBox.place_forget()
     p2pkhTextBox2.place_forget()
@@ -816,6 +818,8 @@ def close_home():
     prvkeyTextBox.place_forget()
     prvkeyTextBox2.place_forget()
     prvkeyTextBox3.place_forget()
+    rand_prvkey.place_forget()
+    rand_pubkey.place_forget()
 
     copy_p2pkh.place_forget()
     copy_p2pkh2.place_forget()
@@ -832,7 +836,9 @@ def close_home():
     copy_prvkey.place_forget()
     copy_prvkey2.place_forget()
     copy_prvkey3.place_forget()
-
+    copy_non_prvkey.place_forget()
+    copy_non_pubkey.place_forget()
+    rand_button.place_forget()
 
 def home_menu():
     homebg.lower()
@@ -978,8 +984,9 @@ loading = Label(root, image=loadingImage, border=0)
 # Confirm button
 writeDown = Button(root, image=writeDownImage, border=0, bg='#FAF7F0',
                    activebackground='#FAF7F0', command=lambda: confirm_seed())
+writeDown.bind('<Return>', confirm_seed())
 # confirm bg
-confirm = Label(root, image=conSeedImage, border=0, bg=mainbg)
+
 confirm.lower()
 
 # status checking
