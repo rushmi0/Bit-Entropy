@@ -18,7 +18,7 @@ def set_format(item:str) -> str:
     return result
 
 def random_entropy():
-    entropy = os.urandom(99999)
+    entropy = os.urandom(696969)
     entropy = int.from_bytes(entropy, byteorder='big')
     private_key = hashlib.sha256(str(entropy).encode()).hexdigest()
     return private_key
