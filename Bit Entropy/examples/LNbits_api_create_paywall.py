@@ -1,10 +1,13 @@
 import requests
 import json
 
-url = "https://lnbits.lightningok.win/paywall/api/v1/paywalls?api-key=a0944a58cfaa4ff3be3864e248ad2a23"
+READ_KEY = "a0944a58cfaa4ff3be3864e248ad2a23"
+ADMIN_KEY = "217aa468d52e40c9ab3e4f00bfdbc32c"
+
+url = "https://lnbits.lightningok.win/paywall/api/v1/paywalls?api-key=" + READ_KEY
 headers = {
     "accept": "application/json",
-    "X-API-KEY": "217aa468d52e40c9ab3e4f00bfdbc32c",
+    "X-API-KEY": ADMIN_KEY,
     "Content-Type": "application/json"
 }
 
@@ -12,7 +15,7 @@ data = {
     "url": "https://www.youtube.com/live/OwEmkZcqKYY?feature=share",
     "memo": "เดี่ยวกับซัน",
     "description": "YouTube",
-    "amount": 999,
+    "amount": 787,
     "remembers": True
 }
 
