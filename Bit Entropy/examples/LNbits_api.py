@@ -3,7 +3,7 @@ import json
 
 apiKey = "a0944a58cfaa4ff3be3864e248ad2a23"
 
-headers = ["-H", "accept: application/json", "-H", "X-API-KEY: 217aa468d52e40c9ab3e4f00bfdbc32c"]
+headers = ["-H", "accept: application/json", "-H", "X-API-KEY: a0944a58cfaa4ff3be3864e248ad2a23"]
 url = "https://lnbits.lightningok.win/api/v1/wallet?api-key=" + apiKey
 
 output = subprocess.run(["curl", "-X", "GET", url] + headers, capture_output=True)
