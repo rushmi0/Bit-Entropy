@@ -1,6 +1,7 @@
 import subprocess
 import json
 
+# api key อันนี้สำกรับดูอย่างเดียว
 apiKey = "a0944a58cfaa4ff3be3864e248ad2a23"
 
 headers = ["-H", "accept: application/json", "-H", "X-API-KEY: a0944a58cfaa4ff3be3864e248ad2a23"]
