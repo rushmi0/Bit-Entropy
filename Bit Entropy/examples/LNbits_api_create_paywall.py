@@ -21,7 +21,6 @@ data = {
 
 response = requests.post(url, headers=headers, data=json.dumps(data))
 
-
 if response.status_code == 200:
     print(json.dumps(response.json(), indent=2))
 else:
