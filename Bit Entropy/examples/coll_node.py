@@ -2,15 +2,14 @@ import json
 import requests
 
 
+# ตั้งค่าสำหรับการเชื่อมต่อโหนดด้วย RPC
 rpc_user = 'Mai'
 rpc_password = 'Mai123'
 rpc_port = 8332
 
-# ตั้งค่าส่วนหัว การตรวจสอบสิทธิ์ด้วย HTTP
+
 auth = requests.auth.HTTPBasicAuth(rpc_user, rpc_password)
 headers = {'content-type': 'application/json'}
-
-# ตั้งค่า URL สำหรับการเชื่อมต่อ RPC
 url = f'http://localhost:{rpc_port}/'
 
 
