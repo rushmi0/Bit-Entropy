@@ -1,3 +1,5 @@
+# แหล่งที่มา https://github.com/karpathy/cryptos/blob/main/cryptos/ripemd160.py
+
 import sys
 import struct
 
