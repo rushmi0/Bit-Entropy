@@ -117,10 +117,15 @@ def multisig_1of1(pubkey=[]) -> bytes :
 
 '''───────────────────────────────────────────────────────────────────────────'''
 
-#pubkey1 = "0441cba5375257c757fc217c6341e14c160656c2c83c7c30f4bd5a611b101ed25f1f26465cd92f4a4bf1be722680edc6dc5845e984828c580c1a283478580b2992"
-#pubkey2 = "04a77b667d3ad209199fd31e7855a071825601482bb1452e2b8137853881cde03817712ab0f4863e35f16f8d573c13ab2ae9696bba2dff88f6c14f7cd628b0a638"
-#pubkey3 = "047b22b60a0afe67577c90a9b518cc5135a34f6ebaf8b48b95fe559e6de453becd54dd6491527127ddff7ca8e2955ca277237ad242e6aac1b2f158cd1919de22ca"
+""" Key Pair """
+# Private Key :: KxGNJz64TfiVXJcxZ8VXbSjWpjeb7BKwg9LbdBMVdcj3y7nXaCh2
+# Public Key :: 03ac908fa2e77a59cdbabcc1ed2a4511d21990e9f8b9c1f004b09c86a3702f83bc
 
+# Private Key :: L22CDbMTehXgH48TkWqeFLvm43BZNJH3boB3PrV7oh6343m4JjMz
+# Public Key :: 031ea37fbb27d6f4eecd038ed50db125bd6944983c46e6fdfc3a435b28e6aadf04
+
+# Private Key :: L3fvCHsFfhUeuwoCwqqEjcT7P1rAz3nHrthcn8FcSb8KDTzCGib3
+# Public Key :: 0207e9cf293331471df3c607ed62cda81c39e7de208bdb87f12f7290b7b63f977d
 
 def main():
     for i in range(6):
