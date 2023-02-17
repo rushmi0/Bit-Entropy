@@ -12,6 +12,7 @@ import os
 CS = ENT / 32
 MS = (ENT + CS) / 11
 '''
+
 '''
 #  entropy = bytes(random.getrandbits(8) for i in range(16))
 #  print("Entropy: " + str(entropy))
@@ -24,14 +25,12 @@ def build(cal:str):
         length_binary = BITS[int(cal)]
         print()
         entropy_2 = os.urandom(length // 8)
-        #print(len(entropy_2), entropy_2)
         mnemonic = bip39.mnemonic_from_bytes(entropy_2)
         #mnemonic = "super choice radio shuffle glimpse copper pipe burger scorpion share gossip certain"
         seed = bip39.mnemonic_to_seed(mnemonic)
 
 
         xprv = bip32.HDKey.from_seed(seed, version=NETWORKS["main"]["xprv"])
-
         zprv = bip32.HDKey.from_seed(seed, version=NETWORKS["main"]["zprv"])
         yprv = bip32.HDKey.from_seed(seed, version=NETWORKS["main"]["yprv"]) # xprv, zprv, yprv
 
@@ -40,20 +39,13 @@ def build(cal:str):
         for piece in pieces:
             word.append(piece)
 
-
-        #print('├──')
         print("Mnemonic: [ {} ]".format(mnemonic))
         print('\t└── {} Word, {} Bits'.format(len(word), length))
         ln()
 
-        # root privkey
-        #zprv = bip32.HDKey.from_seed(seed)
         print("[Master Private Key] \n\t└── " + str(xprv))
         print('\t└── %s'%zprv)
         print('\t└── %s'%yprv)
-
-
-
         print()
 
         xpub = xprv.derive("m/84h/0h/0h").to_public()
@@ -63,37 +55,27 @@ def build(cal:str):
         print("[Master Public Key] \n\t└── %s"% xpub)
         print('\t└── %s'%zpub)
         print('\t└── %s'%ypub)
-
         ln()
 
-        # embit module, teach me how to use all function in ec
         locking_script = ["pkh", "wpkh", "tr"]
-        addr_type = locking_script[0]
+        addr_type = locking_script[1]
         desc = Descriptor.from_string("%s([%s/84h/0h/0h]%s/{0,1}/*)" % (addr_type, hexlify(yprv.my_fingerprint).decode(), xpub))
-        #print(type(desc), desc)
-        # desc = wpkh([e91aec37/84h/0h/0h]xpub6Cn5rGDCLNAsBVDxdP2X1Gi23LiL7HtZMPdtx11RJH8PsHDDLsuoXRd4VBy4YMawyLgbT1MGsbULntvD1WVU1mH6NtLCegEmcoECdLz8NK9/{0,1}/*)
 
-        #amount = int(input("Enter your amount address: "))
         print('\t\t[locking type p2%s]'% addr_type)
-        for i in range(5):
+        for i in range(3):
             print('\t','-' * 50)
             lock = desc.derive(i).address()
-            if len(lock) > 42:
+            if lock[:3] == "bc1q":
                 Frist = lock[:17]
                 Last = lock[-17:]
                 result = Frist + '.........' + Last
-                print('\t',i + 1, "| ", result)
+                print('\t', (i+1), "| ", result)
             else:
-                print('\t',i + 1, "| ", lock)
+                print('\t', (i+1), "| ", lock)
 
-            pubkey = ec.PrivateKey.sec(xpub)
-            #private_key = ec.PrivateKey(secret)
-            print(pubkey.hex())
-            #print(private_key)
+            #pubkey = ec.PrivateKey.sec(xpub)
+            #print(pubkey.hex())
 
-            #prikey = ec.PrivateKey.wif(root)
-            #print('\t',i + 1, "| ", desc.derive(i))
-            #print('-' * 50)
     else:
         print()
         ln()
@@ -105,10 +87,9 @@ def ln():
     print('────' * 30, '\n')
 
 
-
 if __name__ == "__main__":
     BITS = [128, 160, 192, 224, 256]
-    index=1
+    index = 1
     while True:
         ln()
         Select = input('select | [1] 12word | [2] 15word | [3] 18word | [4] 21word | [5] 24word |: ')
