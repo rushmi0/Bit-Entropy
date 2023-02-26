@@ -15,7 +15,7 @@ def connect_node(rpc_user:str, rpc_pass:str, rpc_port=8332) -> str:
     headers = {'content-type': 'application/json'}
     url = f'http://localhost:{rpc_port}/'
 
-    method = 'getblockcount'
+    method = 'getblockchaininfo'
     params = []
 
     # เตรียมข้อมูลสำหรับส่งคำขอไปยัง Bitcoin node
