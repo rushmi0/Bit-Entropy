@@ -1,4 +1,4 @@
 # Bit-Entropy
 
-แอพยังทำไม่เสร็จครบทุกอย่าง ส่วนที่เสร็จแล้วใช้งานได้มีปุ่ม Wallet และปุ่มการตั้งค่าสำหรับเชื่อมต่อแอพเข้ากับ Bitcoin full node. แอพนี้ผมจะไม่ทำต่อแล้วครับ แต่จะไปสร้างใหม่ ออกแบบมาใหม่เลยแต่ยังใช้ชื่อเดิมอยู่
 
+Prototype application [Bit-Entropy](https://www.figma.com/proto/8zOWuGnVB6kXpOKQjBiQjS/Bit-Entropy?node-id=409%3A94&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=409%3A94)
